@@ -19,7 +19,11 @@ jobs:
 
       - uses: docker://pandoc/latex:2.9
         with:
-          args: --output=_output/test.pdf ${{ steps.files_list.outputs.files }}
+          args: >-
+            -t html
+            --css=style.css
+            --output=_output/test.pdf 
+            ${{ steps.files_list.outputs.files }}
       
       - uses: actions/upload-artifact@v1
         with:
