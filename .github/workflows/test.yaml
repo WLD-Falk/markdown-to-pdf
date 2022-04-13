@@ -26,11 +26,11 @@ jobs:
             --output=_output/test.html 
             ${{ steps.files_list.outputs.files }}
 
-      - uses: docker://pandoc/latex:2.9
+      - uses: fifsky/html-to-pdf-action@master
         with:
-          args: >-
-            --output=_output/test.pdf 
-            _output/test.html
+          htmlFile: _output/test.html
+          outputFile: _output/test.pdf
+          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
       
       - uses: actions/upload-artifact@v1
         with:
