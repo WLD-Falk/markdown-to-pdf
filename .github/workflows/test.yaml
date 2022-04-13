@@ -20,17 +20,9 @@ jobs:
       - uses: docker://pandoc/latex:2.9
         with:
           args: >-
-            --standalone
-            --template theme/template.html
-            --css theme/style.css
-            --output=_output/test.html 
+            --variable=fontfamily:roboto
+            --output=_output/test.pdf 
             ${{ steps.files_list.outputs.files }}
-
-      - uses: fifsky/html-to-pdf-action@master
-        with:
-          htmlFile: _output/test.html
-          outputFile: _output/test.pdf
-          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
       
       - uses: actions/upload-artifact@v1
         with:
