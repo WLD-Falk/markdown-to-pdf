@@ -17,23 +17,14 @@ jobs:
           npm install -g md-to-pdf
           mkdir -p _output
           cd test
+          echo; echo "Input Folder Listing"
           ls
+          echo; echo "Generating PDF"
           for f in *.md; do cat $f; echo; done | md-to-pdf --stylesheet "../theme/style.css" > ../_output/blue-paper.pdf
           cd ../_output
+          echo; echo "Output Folder Listing"
           ls
           cd ..
-
-      # - name: Build book
-      #   env:
-      #     VERSION: 0.1.${{ github.run_number }}
-      #   run: |-
-      #     npm install -g md-to-pdf
-      #     md-to-pdf --stylesheet "theme/style.css" root.md
-      #     mkdir _output
-      #     ls
-      #     mv root.pdf _output
-      #     cd _output
-      #     ls
       
       - uses: actions/upload-artifact@v1
         with:
