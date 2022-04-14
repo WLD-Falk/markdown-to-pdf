@@ -14,8 +14,9 @@ jobs:
         env:
           VERSION: 0.1.${{ github.run_number }}
         run: |-
-          npm install -g markdown-pdf --ignore-scripts
-          markdown-pdf -s theme/style.css -o _output/test.pdf root.md
+          npm install -g md-to-pdf
+          md-to-pdf --stylesheet "theme/style.css" root.md
+          mv root.pdf /_output
 
         # - name: create file list
         #   id: files_list
