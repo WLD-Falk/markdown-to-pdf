@@ -15,7 +15,7 @@ jobs:
           VERSION: 0.1.${{ github.run_number }}
         run: |-
           npm install -g md-to-pdf
-          cat root.md include.md | md-to-pdf --stylesheet "theme/style.css"
+          cat root.md include.md | md-to-pdf --stylesheet "theme/style.css" > root.pdf
           mkdir _output
           ls
           mv root.pdf _output
