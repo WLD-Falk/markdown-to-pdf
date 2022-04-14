@@ -10,19 +10,31 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: create file list
-        id: files_list
-        run: |
-          mkdir _output  # create output dir
-          # this will also include README.md
-          echo "::set-output name=files::$(printf '"%s" ' *.md)"
+    - name: Build book
+      env:
+        VERSION: 0.1.${{ github.run_number }}
+      run: |-
+        sudo apt-get install -y ruby-full build-essential zlib1g-dev python
+        echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+        echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+        echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+        source ~/.bashrc
+        sudo gem install jekyll bundler jekyll-contentful-data-import
+        cd scripts
+        ./buildcreate.sh
 
-      - uses: docker://pandoc/latex:2.9
-        with:
-          args: >-
-            --variable=fontfamily:roboto
-            --output=_output/test.pdf 
-            ${{ steps.files_list.outputs.files }}
+      # - name: create file list
+      #   id: files_list
+      #   run: |
+      #     mkdir _output  # create output dir
+      #     # this will also include README.md
+      #     echo "::set-output name=files::$(printf '"%s" ' *.md)"
+
+      # - uses: docker://pandoc/latex:2.9
+      #   with:
+      #     args: >-
+      #       --output=_output/test.pdf 
+      #       ${{ steps.files_list.outputs.files }}
       
       - uses: actions/upload-artifact@v1
         with:
