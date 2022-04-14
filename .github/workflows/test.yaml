@@ -20,7 +20,7 @@ jobs:
           for f in test/*.md; do cat $f; echo; done | md-to-pdf --stylesheet "theme/style.css" > _output/blue-paper.pdf
           cd _output
           ls
-          cd..
+          cd ..
 
       # - name: Build book
       #   env:
