@@ -15,25 +15,24 @@ jobs:
           VERSION: 0.1.${{ github.run_number }}
         run: |-
           npm install -g md-to-pdf
-          md-to-pdf --stylesheet "theme/style.css" root.md
+          cat root.md include.md | md-to-pdf --stylesheet "theme/style.css"
           mkdir _output
           ls
           mv root.pdf _output
           cd _output
           ls
 
-        # - name: create file list
-        #   id: files_list
-        #   run: |
-        #     mkdir _output  # create output dir
-        #     # this will also include README.md
-        #     echo "::set-output name=files::$(printf '"%s" ' *.md)"
-
-        # - uses: docker://pandoc/latex:2.9
-        #   with:
-        #     args: >-
-        #       --output=_output/test.pdf 
-        #       ${{ steps.files_list.outputs.files }}
+      # - name: Build book
+      #   env:
+      #     VERSION: 0.1.${{ github.run_number }}
+      #   run: |-
+      #     npm install -g md-to-pdf
+      #     md-to-pdf --stylesheet "theme/style.css" root.md
+      #     mkdir _output
+      #     ls
+      #     mv root.pdf _output
+      #     cd _output
+      #     ls
       
       - uses: actions/upload-artifact@v1
         with:
