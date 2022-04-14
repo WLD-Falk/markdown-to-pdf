@@ -1,25 +1,150 @@
-## Test
+# Headings
 
-Some more markdown
+## Header 2
 
-![My Face Again](steve-sq.jpg)
+### Header 3
 
-## Markdown tests
+#### Header 4
 
-| Index |              Prefix |               Context                | View                                |
-| ----- | ------------------: | :----------------------------------: | :---------------------------------- |
-| 0     |         `underline` |            `_under_ line`            | _under_ line                        |
-| 1     |              `mark` |              `==mark==`              | ==mark==                            |
-| 2     |         `subscript` |            `~sub~script`             | ~sub~script                         |
-| 3     |       `superscript` |           `^super^script`            | ^super^script                       |
-| 4     |          `checkbox` |            `[] checkbox`             | [ ] checkbox                        |
-| 4     |          `tasklist` |             `- [] task`              | [ ] tasklist                        |
-| 5     |             `table` | [Markdown](#paste-as-markdown-table) | [Table](#paste-as-markdown-table)   |
-| 6     |               `kbd` |        `<kbd>Keyboard</kbd>`         | <kbd>Keyboard</kbd>                 |
-| 7     | `admonition` `note` |         `!!! warn`<br>`text`         | [addmonition](#admonition)          |
-| 8     |          `footnote` |     `[^abc]`  <br> `[^abc]: ABC`     | [footnote](#markdown-it-footnote)   |
-| 9     |         `container` |  [markdown](#markdown-it-container)  | [container](#markdown-it-container) |
-| 10    |              `abbr` |       `*[ABBR]: Abbreviation `       | [abbr](#markdown-it-abbr)           |
-| 11    |              `attr` |    `**attr**{style="color:red"}`     | **attr**{style="color:red"}         |
-| 12    |             `color` |  `color <font color=red>red</font>`  | color <font color=red>red</font>    |
+##### Header 5
 
+###### Header 6
+
+# Paragraphs
+
+Text separated by blank lines become a paragraph.
+
+If you use a single line break it just continues the...
+... text as if there is no line break.
+
+# Inline Styles
+
+Inline styles include *emphasis*, **strong**, and `inline-code`.
+
+You can add an --- emdash or ellipsis...
+
+# Lists
+
+Using a * or a - results in the same bullet list:
+
+  * this one
+  * that one
+  * the other one
+
+Or
+
+- One
+- Two
+- Three
+
+Use 1 for numbered lists (you don't need to maintain the numbers as it is automatic):
+
+ 1. first item
+ 1. second item
+ 1. third item
+
+You can continus a numbered list:
+
+4. four
+4. Five
+4. Six
+
+And nested lists
+
+- One
+  - a
+  - b
+  - c
+    - x
+    - y
+    - z
+- Two
+  - a
+  - b
+  - c
+
+And definition lists
+
+one
+  : The first number
+two
+  : The second number
+tomatoes
+  : The third number
+
+# Block Quotes
+
+> Block quotes are written like so.
+>
+> They can span multiple paragraphs,
+> if you like.
+
+# Code Blocks
+
+Indent by four spaces
+
+    This is code
+
+Or wrap with triple ` with an optional language
+
+```js
+function js() {
+    return "js";
+}
+```
+
+Or with triple ~
+
+~~~js
+This is code and I can add:
+
+```
+
+Inside the code
+~~~
+
+# Math blocks
+
+Inline math $\omega = d\phi / dt$
+
+Block math:
+
+$$I = \int \rho R^{2} dV$$
+
+# Links
+
+You can [click here](https://www.stevefenton.co.uk/) for my website.
+
+The URL between the () can be a local/relative path.
+
+# Footnotes
+
+Where supported, you can use footnotes [^1]
+
+[^1] This is the footnote text.
+
+
+# Tables
+
+| Header | Header | Header |
+|--------|--------|--------|
+| Data   | Data   | Data   |
+
+
+# Horizontal rule
+
+Three --- in a row on its own line for a ruler.
+
+---
+
+Or three *** in a row on its own line.
+
+***
+
+# Images
+
+![Steve](steve-sq.jpg "It's Steve")
+
+# Escape sequences
+
+You can use \ to escape any special characters. For example \*example\*.
