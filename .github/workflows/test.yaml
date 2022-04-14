@@ -15,12 +15,12 @@ jobs:
           VERSION: 0.1.${{ github.run_number }}
         run: |-
           npm install -g md-to-pdf
-          for f in *.md; do cat $f; echo; done | md-to-pdf --stylesheet "theme/style.css" > root.pdf
           mkdir -p _output
           ls
-          mv root.pdf _output
+          for f in test/*.md; do cat $f; echo; done | md-to-pdf --stylesheet "theme/style.css" > _output/blue-paper.pdf
           cd _output
           ls
+          cd..
 
       # - name: Build book
       #   env:
