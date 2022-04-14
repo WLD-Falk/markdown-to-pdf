@@ -17,6 +17,8 @@ jobs:
           npm install -g md-to-pdf
           md-to-pdf --stylesheet "theme/style.css" root.md
           mv root.pdf _output
+          cd _output
+          ls
 
         # - name: create file list
         #   id: files_list
