@@ -14,13 +14,8 @@ jobs:
         env:
           VERSION: 0.1.${{ github.run_number }}
         run: |-
-          sudo apt-get install -y ruby-full build-essential zlib1g-dev python
-          echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
-          echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-          echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-          source ~/.bashrc
-          sudo gem install jekyll bundler jekyll-contentful-data-import
-          ./buildcreate.sh
+          npm install -g markdown-pdf --ignore-scripts
+          markdown-pdf -s theme/style.css -o _output/test.pdf root.md
 
         # - name: create file list
         #   id: files_list
