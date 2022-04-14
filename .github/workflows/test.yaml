@@ -16,9 +16,10 @@ jobs:
         run: |-
           npm install -g md-to-pdf
           mkdir -p _output
+          cd test
           ls
-          for f in test/*.md; do cat $f; echo; done | md-to-pdf --stylesheet "theme/style.css" > _output/blue-paper.pdf
-          cd _output
+          for f in *.md; do cat $f; echo; done | md-to-pdf --stylesheet "../theme/style.css" > ../_output/blue-paper.pdf
+          cd ../_output
           ls
           cd ..
 
