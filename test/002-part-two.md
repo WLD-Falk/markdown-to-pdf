@@ -23,7 +23,7 @@ Inline styles include *emphasis*, **strong**, and `inline-code`.
 
 You can add an --- emdash or ellipsis...
 
-<div class="page-break"></div>
+<div style="page-break-after: always;"></div>
 
 # Lists
 
