@@ -1,7 +1,7 @@
 # Headings
 
 ## Header 2
-<div class="page-break"></div>
+
 ### Header 3
 
 #### Header 4
@@ -22,6 +22,8 @@ If you use a single line break it just continues the...
 Inline styles include *emphasis*, **strong**, and `inline-code`.
 
 You can add an --- emdash or ellipsis...
+
+<div class="page-break"></div>
 
 # Lists
 
